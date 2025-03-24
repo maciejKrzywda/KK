@@ -67,11 +67,11 @@ class MainActivity : AppCompatActivity() {
             val radioGroup = findViewById<RadioGroup>(R.id.ButtonGroup)
             radioGroup.setOnCheckedChangeListener { _, checkedId ->
                 val radioButton = findViewById<RadioButton>(checkedId)
-                val caffeType = radioButton.text.toString()}
+                val caffeType = radioButton.text}
 
                 val checkBox = findViewById<CheckBox>(R.id.checkBoxGroup)
                 var checkBoxChecked = true
-                var checkBoxListener = checkBox.setOnCheckedChangeListener { _, isChecked ->
+                checkBox.setOnCheckedChangeListener { _, isChecked ->
                     if (isChecked) {
                         checkBoxChecked = true
                     } else {
@@ -79,9 +79,9 @@ class MainActivity : AppCompatActivity() {
                     }
                 }.toString()
 
-                val seekBar = findViewById<SeekBar>(R.id.seekBar)
+                val seekBar = findViewById<SeekBar>(R.id.seekBar).toString()
 
-                Log.d("Dupa","Zamówienie Rodzaj: , Dodatki: $checkBoxListener Ilość: ${seekBar.progress.toString()}")
+            Toast.makeText(this@MainActivity,"$seekBar, $checkBoxChecked, ${radioGroup}", Toast.LENGTH_LONG).show()
             }
         }
     }
