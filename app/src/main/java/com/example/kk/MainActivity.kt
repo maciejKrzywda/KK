@@ -3,23 +3,18 @@ package com.example.kk
 
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.CheckBox
-import android.widget.GridLayout
 import android.widget.ImageView
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.SeekBar
-import android.widget.SeekBar.OnSeekBarChangeListener
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import java.io.Console
-import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +27,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val Button: Button = findViewById(R.id.Button)
+        val button: Button = findViewById(R.id.Button)
 
         val numberOf = findViewById<TextView>(R.id.NumberOf)
         val myImageView: ImageView = findViewById(R.id.ImageView)
@@ -63,11 +58,13 @@ class MainActivity : AppCompatActivity() {
 
             }
         })
-        Button.setOnClickListener {
+        button.setOnClickListener {
             val radioGroup = findViewById<RadioGroup>(R.id.ButtonGroup)
+            var caffeType = ""
             radioGroup.setOnCheckedChangeListener { _, checkedId ->
                 val radioButton = findViewById<RadioButton>(checkedId)
-                val caffeType = radioButton.text}
+                caffeType = radioButton.text.toString()
+            }
 
                 val checkBox = findViewById<CheckBox>(R.id.checkBoxGroup)
                 var checkBoxChecked = true
@@ -77,11 +74,11 @@ class MainActivity : AppCompatActivity() {
                     } else {
                         checkBoxChecked = false
                     }
-                }.toString()
+                }
 
-                val seekBar = findViewById<SeekBar>(R.id.seekBar).toString()
+                val seekBar = findViewById<SeekBar>(R.id.seekBar)
 
-            Toast.makeText(this@MainActivity,"$seekBar, $checkBoxChecked, ${radioGroup}", Toast.LENGTH_LONG).show()
+             Toast.makeText(this@MainActivity," $checkBoxChecked, $caffeType", Toast.LENGTH_SHORT).show()
             }
         }
     }
