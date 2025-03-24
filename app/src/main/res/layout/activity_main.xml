@@ -1,19 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@color/Dutch_White">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:background="@color/Dark_beige"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="Zamów kawę"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="@color/Beige"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/ImageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Kawa"
+        android:textSize="25dp"
+        android:textColor="@color/Dark_beige"
+        android:textStyle="bold"
+        />
+
+    <RadioGroup
+        android:background="@color/Dark_Vanilla"
+        android:id="@+id/ButtonGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <RadioButton
+            android:id="@+id/Espresso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Espresso"
+            android:textColor="@color/Beige"/>
+
+        <RadioButton
+            android:id="@+id/Cappuccino"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Capuccino"
+            android:textColor="@color/Beige"/>
+        <RadioButton
+            android:id="@+id/Latte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Latte"
+            android:textColor="@color/Beige"/>
+
+    </RadioGroup>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Dodatki"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="@color/Dark_beige"
+        android:padding="5dp"/>
+    <GridLayout
+        android:id="@+id/checkBoxGroup"
+        android:background="@color/Dark_Vanilla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal">
+    <CheckBox
+        android:id="@+id/Milk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/Beige"
+        android:text="Mleko"/>
+
+    <CheckBox
+        android:id="@+id/Sugar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/Beige"
+        android:text="Cukier"/>
+
+    <CheckBox
+        android:id="@+id/Cup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/Beige"
+        android:text="Kubek"/>
+
+    <CheckBox
+        android:id="@+id/Spoon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/Beige"
+        android:text="Łyżka"
+        android:layout_gravity=""/>
+    </GridLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ilość"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/Dark_beige"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/Dutch_White">
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:max="5"
+        android:progress="0"
+        android:thumbTint="@color/Dark_beige"
+        android:trackTint="@color/Tan" />
+        <TextView
+            android:id="@+id/NumberOf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_gravity="end"/>
+
+    </androidx.cardview.widget.CardView>
+    <Button
+        android:id="@+id/Button"
+        android:backgroundTint="@color/Dark_beige"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:text="Złóż zamówienie"
+        android:textColor="@color/Beige"
+        android:textStyle="bold"
+        />
+
+</LinearLayout>
